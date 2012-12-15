@@ -1,0 +1,7 @@
+Date: <%= Time.parse(created_at).strftime('%d/%m/%Y %H:%M:%S') %>
+Application: <%= application_name %>
+Description: <%= short_description %>
+Severity: <%= severity %>
+URL: <%= alert_url %>
+
+<%= message
