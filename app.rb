@@ -21,17 +21,21 @@ class App < Sinatra::Base
   post '/new-relic' do
     if params['deployment'] || params['alert']
 
+      message, title = nil
+
       if params['deployment']
         d = Hashie::Mash.new(JSON(params['deployment']))
         title = "Deployment for #{d.application_name} by #{d.deployed_by}"
         message = Tilt.new(File.join('.', 'views', 'new-relic', 'deployment.erb')).render(d)
       elsif params['alert']
         d = Hashie::Mash.new(JSON(params['alert']))
-        title = "Alert for #{d.application_name} - #{d.short_description}"
+        title = "Alert for #{d.application_name} - #{d.message}"
         message = Tilt.new(File.join('.', 'views', 'new-relic', 'alert.erb')).render(d)
       end
 
-      Pushover.notification(message: message, title: title, user: config.user_key, token: config.api_key)
+      if message && title
+        Pushover.notification(message: message, title: title, user: config.user_key, token: config.api_key)
+      end
     end
     ''
   end
