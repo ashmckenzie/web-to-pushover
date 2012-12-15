@@ -2,7 +2,7 @@ source :rubygems
 
 gem 'unicorn'
 gem 'sinatra', :require => false
-gem 'sinatra-contrib', :require => false
+gem 'sinatra-contrib'
 gem 'pushover'
 gem 'hashie'
 gem 'activesupport'
