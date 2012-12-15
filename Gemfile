@@ -1,10 +1,10 @@
 source :rubygems
 
-gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'unicorn'
+gem 'sinatra', :require => false
+gem 'sinatra-contrib', :require => false
 gem 'pushover'
 gem 'hashie'
-gem 'unicorn'
 gem 'activesupport'
 gem 'tilt'
 

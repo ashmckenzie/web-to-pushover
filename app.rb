@@ -1,6 +1,7 @@
 require 'bundler/setup'
 Bundler.require(:default, :development)
 
+reuqire 'sinatra'
 require 'json'
 require 'active_support/all'
 
