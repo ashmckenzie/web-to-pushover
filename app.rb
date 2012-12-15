@@ -9,11 +9,6 @@ Dir['./config/initialisers/*.rb'].each { |f| require f }
 
 class App < Sinatra::Base
 
-  # before do
-  #   halt 401, 'Access denied' unless $APP_CONFIG.api_keys.include? params[:api_key]
-  #   @api_key = params[:api_key]
-  # end
-
   configure :development do
     register Sinatra::Reloader
   end
