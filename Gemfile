@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'sinatra', :require => false
+gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'pushover'
 gem 'hashie'
