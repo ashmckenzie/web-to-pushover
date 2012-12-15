@@ -3,7 +3,6 @@ Bundler.require(:default, :development)
 
 require 'json'
 require 'active_support/all'
-require 'sinatra'
 
 Dir['./config/initialisers/*.rb'].each { |f| require f }
 
