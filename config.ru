@@ -3,4 +3,3 @@ Bundler.require(:default, :development)
 
 require './app'
 run App
-
