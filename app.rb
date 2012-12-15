@@ -18,7 +18,7 @@ class App < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/new-relic' do
+  post '/new-relic' do
     if params['deployment'] || params['alert']
 
       if params['deployment']
