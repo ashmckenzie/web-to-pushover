@@ -15,7 +15,7 @@ server {
     proxy_set_header Host $http_host;
     proxy_redirect off;
     proxy_buffering off;
-    proxy_pass http://unicorn;
+    proxy_pass http://<%= config['app_name'] %>-unicorn;
   }
 
   access_log  /var/log/nginx/<%= config['app_name'] %>.access.log  combined;
